@@ -1,0 +1,5 @@
+{
+  "name": "MediGuard Clinical Assistant",
+  "description": "A comprehensive clinical decision support system for medical professionals. Features integrated calculators for renal and hepatic function (Child-Pugh, CrCl), electrolyte management protocols, and a drug dosage adjustment engine based on patient physiological parameters.",
+  "requestFramePermissions": []
+}
