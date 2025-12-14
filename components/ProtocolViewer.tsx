@@ -16,22 +16,34 @@ const ELECTROLYTE_DATA: ProtocolSection[] = [
                         <li><strong>10–20 kg:</strong> 40 mL + 2 mL/kg/hr (for every kg &gt; 10)</li>
                         <li><strong>&gt;20 kg:</strong> 60 mL + 1 mL/kg/hr (for every kg &gt; 20)</li>
                     </ul>
-                    <div className="bg-blue-50 p-2 rounded text-sm font-semibold text-blue-800">
+                    <div className="bg-blue-50 p-2 rounded text-sm font-semibold text-blue-800 border border-blue-100">
                         Quick Adult Shortcut (&gt;20kg): Weight (kg) + 40 = mL/hr
                     </div>
                 </div>
 
                 <div className="bg-white p-4 rounded-lg border border-purple-200">
                     <h4 className="font-bold text-purple-900 mb-2 border-b border-purple-100 pb-1">2. Fluid Deficit (Dehydration)</h4>
-                    <p className="text-sm mb-2"><strong>Formula:</strong> Deficit (L) = Weight (kg) × (% Dehydration / 100)</p>
-                    <table className="w-full text-sm border-collapse border border-slate-200">
-                        <thead className="bg-slate-100 text-slate-900">
-                            <tr><th className="p-2 border text-left">Severity</th><th className="p-2 border text-left">Signs</th></tr>
+                    <p className="text-sm mb-2 font-medium"><strong>Formula:</strong> Deficit (L) = Weight (kg) × (% Dehydration / 100)</p>
+                    <table className="w-full text-sm border-collapse border border-slate-300 mt-3 shadow-sm">
+                        <thead className="bg-purple-100 text-purple-900">
+                            <tr>
+                                <th className="p-3 border border-slate-300 text-left font-bold">Severity</th>
+                                <th className="p-3 border border-slate-300 text-left font-bold">Signs</th>
+                            </tr>
                         </thead>
-                        <tbody>
-                            <tr><td className="p-2 border font-medium">Mild (3-5%)</td><td className="p-2 border">Mucosa slightly dry</td></tr>
-                            <tr><td className="p-2 border font-medium">Moderate (6-9%)</td><td className="p-2 border">Tachycardia, sunken eyes, delayed refill</td></tr>
-                            <tr><td className="p-2 border font-medium">Severe (&gt;10%)</td><td className="p-2 border">Hypotension, cool extremities (Shock)</td></tr>
+                        <tbody className="bg-white">
+                            <tr>
+                                <td className="p-3 border border-slate-300 font-bold text-purple-900">Mild (3-5%)</td>
+                                <td className="p-3 border border-slate-300 text-purple-800">Mucosa slightly dry</td>
+                            </tr>
+                            <tr>
+                                <td className="p-3 border border-slate-300 font-bold text-purple-900">Moderate (6-9%)</td>
+                                <td className="p-3 border border-slate-300 text-purple-800">Tachycardia, sunken eyes, delayed refill</td>
+                            </tr>
+                            <tr>
+                                <td className="p-3 border border-slate-300 font-bold text-purple-900">Severe (&gt;10%)</td>
+                                <td className="p-3 border border-slate-300 text-purple-800">Hypotension, cool extremities (Shock)</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -44,36 +56,36 @@ const ELECTROLYTE_DATA: ProtocolSection[] = [
         content: (
             <div className="space-y-4 text-slate-800">
                 <div className="bg-red-50 p-3 rounded-lg border border-red-200 text-red-900 text-sm font-bold flex items-center gap-2">
-                    <AlertTriangle className="w-5 h-5"/>
-                    CRITICAL: Max correction 8 mEq/L per 24h to prevent ODS / Cerebral Edema.
+                    <AlertTriangle className="w-5 h-5 flex-shrink-0"/>
+                    <span>CRITICAL: Max correction 8 mEq/L per 24h to prevent ODS / Cerebral Edema.</span>
                 </div>
 
-                <div className="bg-white p-4 rounded-lg border border-slate-200">
+                <div className="bg-white p-4 rounded-lg border border-slate-300 shadow-sm">
                     <h4 className="font-bold text-slate-900 mb-2">Adrogue-Madias Formula (Change per Liter)</h4>
-                    <div className="bg-slate-100 p-3 rounded text-center font-mono text-sm mb-3">
+                    <div className="bg-purple-50 p-3 rounded text-center font-mono text-sm mb-3 border border-purple-100 font-bold text-purple-900">
                         Change in Na = (Infusate Na - Serum Na) / (TBW + 1)
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-xs">
-                        <div className="p-2 bg-slate-50 border rounded"><strong>TBW Estimates:</strong><br/>Men: 0.6 × Wt<br/>Women/Elderly: 0.5 × Wt</div>
-                        <div className="p-2 bg-slate-50 border rounded"><strong>Infusate Na Content:</strong><br/>3% Saline: 513 mEq/L<br/>NS (0.9%): 154 mEq/L<br/>LR: 130 mEq/L<br/>0.45% NS: 77 mEq/L</div>
+                        <div className="p-2 bg-slate-50 border border-slate-200 rounded"><strong>TBW Estimates:</strong><br/>Men: 0.6 × Wt<br/>Women/Elderly: 0.5 × Wt</div>
+                        <div className="p-2 bg-slate-50 border border-slate-200 rounded"><strong>Infusate Na Content:</strong><br/>3% Saline: 513 mEq/L<br/>NS (0.9%): 154 mEq/L<br/>LR: 130 mEq/L<br/>0.45% NS: 77 mEq/L</div>
                     </div>
                 </div>
 
-                <table className="w-full text-sm border-collapse border border-slate-200">
-                    <thead className="bg-yellow-50 text-yellow-900">
+                <table className="w-full text-sm border-collapse border border-slate-300 shadow-sm">
+                    <thead className="bg-yellow-50 text-purple-900">
                         <tr>
-                            <th className="p-2 border text-left">Condition</th>
-                            <th className="p-2 border text-left">Management</th>
+                            <th className="p-3 border border-slate-300 text-left font-bold">Condition</th>
+                            <th className="p-3 border border-slate-300 text-left font-bold">Management</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="bg-white">
                         <tr>
-                            <td className="p-2 border align-top">
-                                <strong>Hyponatremia</strong> (&lt;135)<br/>
-                                <span className="text-xs text-slate-500">Risk: Cerebral Edema</span>
+                            <td className="p-3 border border-slate-300 align-top">
+                                <strong className="text-purple-900 text-base block mb-1">Hyponatremia</strong> <span className="text-xs font-mono bg-purple-100 text-purple-800 px-1 rounded">&lt;135</span><br/>
+                                <span className="text-xs text-red-700 font-bold mt-1 inline-block">Risk: Cerebral Edema</span>
                             </td>
-                            <td className="p-2 border">
-                                <ul className="list-disc pl-4 space-y-1">
+                            <td className="p-3 border border-slate-300 align-top">
+                                <ul className="list-disc pl-4 space-y-1 text-purple-800">
                                     <li><strong>Hypovolemic:</strong> 0.9% NaCl</li>
                                     <li><strong>Euvolemic (SIADH):</strong> Fluid restrict</li>
                                     <li><strong>Severe (Seizures):</strong> 3% Hypertonic Saline bolus</li>
@@ -81,11 +93,11 @@ const ELECTROLYTE_DATA: ProtocolSection[] = [
                             </td>
                         </tr>
                         <tr>
-                            <td className="p-2 border align-top">
-                                <strong>Hypernatremia</strong> (&gt;145)<br/>
-                                <span className="text-xs text-slate-500">Risk: Brain Hemorrhage</span>
+                            <td className="p-3 border border-slate-300 align-top">
+                                <strong className="text-purple-900 text-base block mb-1">Hypernatremia</strong> <span className="text-xs font-mono bg-purple-100 text-purple-800 px-1 rounded">&gt;145</span><br/>
+                                <span className="text-xs text-red-700 font-bold mt-1 inline-block">Risk: Brain Hemorrhage</span>
                             </td>
-                            <td className="p-2 border">
+                            <td className="p-3 border border-slate-300 align-top text-purple-800">
                                 <strong>Free Water Deficit:</strong> TBW × ((Na/140) - 1)<br/>
                                 Give D5W or oral water. Max drop 0.5 mEq/L/hr.
                             </td>
@@ -100,25 +112,33 @@ const ELECTROLYTE_DATA: ProtocolSection[] = [
         color: 'border-orange-600 text-orange-900',
         content: (
             <div className="space-y-4 text-slate-800">
-                <table className="w-full text-sm border-collapse border border-slate-200">
-                    <thead className="bg-orange-50 text-orange-900">
+                <table className="w-full text-sm border-collapse border border-slate-300 shadow-sm">
+                    <thead className="bg-orange-50 text-purple-900">
                         <tr>
-                            <th className="p-2 border text-left">Level</th>
-                            <th className="p-2 border text-left">Protocol</th>
+                            <th className="p-3 border border-orange-200 text-left font-bold">Level</th>
+                            <th className="p-3 border border-orange-200 text-left font-bold">Protocol</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="bg-white">
                         <tr>
-                            <td className="p-2 border align-top"><strong>Hypokalemia</strong> (&lt;3.5)<br/>Risk: Arrhythmia</td>
-                            <td className="p-2 border">
+                            <td className="p-3 border border-slate-300 align-top">
+                                <strong className="text-purple-900 block">Hypokalemia</strong>
+                                <span className="text-xs font-mono bg-purple-100 text-purple-800 px-1 rounded">&lt;3.5</span><br/>
+                                <span className="text-xs text-red-700 font-bold mt-1 inline-block">Risk: Arrhythmia</span>
+                            </td>
+                            <td className="p-3 border border-slate-300 align-top text-purple-800">
                                 1. <strong>Oral KCl:</strong> Preferred for mild-mod.<br/>
                                 2. <strong>IV KCl:</strong> For severe (&lt;2.5). Max rate 10 mEq/hr peripheral. Never IV push.<br/>
-                                <em>Check Mg++ levels.</em>
+                                <em className="text-xs text-slate-500 mt-1 block">Note: Check Mg++ levels.</em>
                             </td>
                         </tr>
                         <tr>
-                            <td className="p-2 border align-top"><strong>Hyperkalemia</strong> (&gt;5.0)<br/>Risk: Cardiac Arrest</td>
-                            <td className="p-2 border">
+                            <td className="p-3 border border-slate-300 align-top">
+                                <strong className="text-purple-900 block">Hyperkalemia</strong>
+                                <span className="text-xs font-mono bg-purple-100 text-purple-800 px-1 rounded">&gt;5.0</span><br/>
+                                <span className="text-xs text-red-700 font-bold mt-1 inline-block">Risk: Cardiac Arrest</span>
+                            </td>
+                            <td className="p-3 border border-slate-300 align-top text-purple-800">
                                 1. <strong>Stabilize:</strong> Ca Gluconate IV.<br/>
                                 2. <strong>Shift:</strong> Insulin 10U + D50W.<br/>
                                 3. <strong>Remove:</strong> Lasix, Kayexalate, Dialysis.
@@ -135,28 +155,28 @@ const ELECTROLYTE_DATA: ProtocolSection[] = [
         content: (
             <div className="space-y-6 text-slate-800">
                 {/* Magnesium */}
-                <div>
-                    <h4 className="font-bold text-slate-900 border-b border-slate-200 mb-2">Magnesium (Mg++) Normal: 1.5-2.5</h4>
-                    <ul className="text-sm list-disc pl-4 space-y-1">
-                        <li><strong>Hypo (&lt;1.5):</strong> Torsades risk. IV Mag Sulfate 1-2g over 1h.</li>
+                <div className="bg-white p-4 rounded-lg border border-slate-200">
+                    <h4 className="font-bold text-slate-900 border-b border-slate-200 mb-2 pb-1">Magnesium (Mg++) Normal: 1.5-2.5</h4>
+                    <ul className="text-sm list-disc pl-4 space-y-2">
+                        <li><strong>Hypo (&lt;1.5):</strong> <span className="text-red-700 font-bold text-xs">Torsades Risk.</span> IV Mag Sulfate 1-2g over 1h.</li>
                         <li><strong>Hyper (&gt;2.5):</strong> Loss of reflexes. Calcium Gluconate to reverse neuromuscular effects.</li>
                     </ul>
                 </div>
                 
                 {/* Calcium */}
-                <div>
-                    <h4 className="font-bold text-slate-900 border-b border-slate-200 mb-2">Calcium (Ca++) Normal: 8.5-10.5</h4>
-                    <p className="text-xs mb-1 italic">Corrected Ca = Measured Ca + 0.8 × (4.0 - Albumin)</p>
-                    <ul className="text-sm list-disc pl-4 space-y-1">
+                <div className="bg-white p-4 rounded-lg border border-slate-200">
+                    <h4 className="font-bold text-slate-900 border-b border-slate-200 mb-2 pb-1">Calcium (Ca++) Normal: 8.5-10.5</h4>
+                    <div className="bg-slate-50 p-2 rounded text-xs font-mono text-slate-700 mb-2 border border-slate-100">Corrected Ca = Measured Ca + 0.8 × (4.0 - Albumin)</div>
+                    <ul className="text-sm list-disc pl-4 space-y-2">
                         <li><strong>Hypo (&lt;8.5):</strong> Tetany. IV Ca Gluconate. Correct Mg first.</li>
                         <li><strong>Hyper (&gt;10.5):</strong> Stones, confusion. Fluids (NS) + Lasix. Bisphosphonates.</li>
                     </ul>
                 </div>
 
                 {/* Phosphate */}
-                <div>
-                    <h4 className="font-bold text-slate-900 border-b border-slate-200 mb-2">Phosphate (PO4) Normal: 2.5-4.5</h4>
-                    <ul className="text-sm list-disc pl-4 space-y-1">
+                <div className="bg-white p-4 rounded-lg border border-slate-200">
+                    <h4 className="font-bold text-slate-900 border-b border-slate-200 mb-2 pb-1">Phosphate (PO4) Normal: 2.5-4.5</h4>
+                    <ul className="text-sm list-disc pl-4 space-y-2">
                         <li><strong>Hypo (&lt;2.5):</strong> Resp failure. Oral/IV Phosphate.</li>
                         <li><strong>Hyper (&gt;4.5):</strong> Binders (Sevelamer). Low phos diet.</li>
                     </ul>
@@ -200,13 +220,14 @@ const ELECTROLYTE_DATA: ProtocolSection[] = [
                 <p><strong>1. Stop Offending Agents:</strong> Discontinue meds causing imbalance (e.g., diuretics).</p>
                 <p><strong>2. Specific Order:</strong> Prescribe exact fluid and rate based on calculation.</p>
                 <p><strong>3. Emergency Rescue:</strong> Order PRN meds (e.g., Ca Gluconate for hyperkalemia, 3% Saline for seizures).</p>
-                <p><strong>4. Monitoring:</strong>
-                    <ul className="list-disc pl-4 mt-1">
+                <div className="pl-2">
+                    <strong>4. Monitoring:</strong>
+                    <ul className="list-disc pl-5 mt-1 text-slate-700">
                         <li><strong>Labs:</strong> q2-4h for severe, q6h for stable.</li>
                         <li><strong>Cardiac:</strong> ECG for K/Mg/Ca imbalances.</li>
                         <li><strong>I/O:</strong> Strict output tracking.</li>
                     </ul>
-                </p>
+                </div>
                 <p><strong>5. Contingency:</strong> "If Na rises &gt;8 in 24h, hold fluids and notify MD."</p>
             </div>
         )
@@ -219,13 +240,13 @@ const DENTAL_DATA: ProtocolSection[] = [
         color: 'border-cyan-600 text-cyan-900',
         content: (
             <div className="space-y-6">
-                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-900">
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-900 shadow-sm">
                     <strong>Principle:</strong> Antibiotics are adjuncts to surgical drainage in odontogenic infections. Duration: 3-5 days post-surgery or until symptoms resolve.
                 </div>
     
                 {/* 1. BETA-LACTAMS */}
                 <div>
-                    <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">1. BETA-LACTAMS & CARBAPENEMS</h3>
+                    <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">1. BETA-LACTAMS & CARBAPENEMS</h3>
                     
                     {/* AUGMENTIN */}
                     <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm mb-4">
@@ -237,13 +258,18 @@ const DENTAL_DATA: ProtocolSection[] = [
                                 <li><strong>Indications:</strong> First-line for odontogenic infections</li>
                             </ul>
                             <div>
-                                <strong className="block text-slate-900 mb-1">Renal Adjustment:</strong>
-                                <table className="w-full text-xs border-collapse border border-slate-200">
-                                    <thead className="bg-slate-100"><tr><th className="p-1 border border-slate-200 text-left">CrCl (mL/min)</th><th className="p-1 border border-slate-200 text-left">Dose</th></tr></thead>
-                                    <tbody>
-                                        <tr><td className="p-1 border border-slate-200">>30</td><td className="p-1 border border-slate-200">Standard</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">10-30</td><td className="p-1 border border-slate-200">500/125 mg q12h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">&lt;10</td><td className="p-1 border border-slate-200">250/125 mg q12h</td></tr>
+                                <strong className="block text-purple-900 mb-2 font-bold">Renal Adjustment:</strong>
+                                <table className="w-full text-xs border-collapse border border-slate-300">
+                                    <thead className="bg-purple-100">
+                                        <tr>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">CrCl (mL/min)</th>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">>30</td><td className="p-2 border border-slate-300 text-purple-800">Standard</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">10-30</td><td className="p-2 border border-slate-300 text-purple-800">500/125 mg q12h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">&lt;10</td><td className="p-2 border border-slate-300 text-purple-800">250/125 mg q12h</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -259,13 +285,18 @@ const DENTAL_DATA: ProtocolSection[] = [
                                 <li><strong>Alert:</strong> High Na load. Heart Failure risk.</li>
                             </ul>
                             <div>
-                                <strong className="block text-slate-900 mb-1">Renal Adjustment:</strong>
-                                <table className="w-full text-xs border-collapse border border-slate-200">
-                                    <thead className="bg-slate-100"><tr><th className="p-1 border border-slate-200 text-left">CrCl (mL/min)</th><th className="p-1 border border-slate-200 text-left">Interval</th></tr></thead>
-                                    <tbody>
-                                        <tr><td className="p-1 border border-slate-200">≥30</td><td className="p-1 border border-slate-200">q6-8h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">15-29</td><td className="p-1 border border-slate-200">q12h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">5-14</td><td className="p-1 border border-slate-200">q24h</td></tr>
+                                <strong className="block text-purple-900 mb-2 font-bold">Renal Adjustment:</strong>
+                                <table className="w-full text-xs border-collapse border border-slate-300">
+                                    <thead className="bg-purple-100">
+                                        <tr>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">CrCl (mL/min)</th>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">Interval</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">≥30</td><td className="p-2 border border-slate-300 text-purple-800">q6-8h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">15-29</td><td className="p-2 border border-slate-300 text-purple-800">q12h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">5-14</td><td className="p-2 border border-slate-300 text-purple-800">q24h</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -287,19 +318,26 @@ const DENTAL_DATA: ProtocolSection[] = [
                         <h4 className="font-bold text-blue-800 text-base mb-2">CEFEPIME (Maxipime)</h4>
                         <div className="text-sm text-slate-800">
                              <p className="mb-2"><strong>Dose:</strong> 2g IV q8h (Severe/Febrile Neutropenia).</p>
-                             <div className="bg-slate-50 p-2 rounded border border-slate-200 mb-2">
-                                <strong className="block text-slate-900 text-xs mb-1">Renal Adjustment:</strong>
-                                <table className="w-full text-xs border-collapse border border-slate-200">
-                                    <thead className="bg-slate-100"><tr><th className="p-1 border border-slate-200 text-left">CrCl</th><th className="p-1 border border-slate-200 text-left">Dose</th></tr></thead>
-                                    <tbody>
-                                        <tr><td className="p-1 border border-slate-200">>60</td><td className="p-1 border border-slate-200">2g q8h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">30-60</td><td className="p-1 border border-slate-200">2g q12h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">11-29</td><td className="p-1 border border-slate-200">2g q24h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">&lt;11</td><td className="p-1 border border-slate-200">1g q24h</td></tr>
+                             <div className="mb-2">
+                                <strong className="block text-purple-900 text-xs mb-1 font-bold">Renal Adjustment:</strong>
+                                <table className="w-full text-xs border-collapse border border-slate-300">
+                                    <thead className="bg-purple-100">
+                                        <tr>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">CrCl</th>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">>60</td><td className="p-2 border border-slate-300 text-purple-800">2g q8h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">30-60</td><td className="p-2 border border-slate-300 text-purple-800">2g q12h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">11-29</td><td className="p-2 border border-slate-300 text-purple-800">2g q24h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">&lt;11</td><td className="p-2 border border-slate-300 text-purple-800">1g q24h</td></tr>
                                     </tbody>
                                 </table>
                              </div>
-                             <p className="text-red-700 font-bold text-xs bg-red-50 p-1 rounded inline-block">⚠️ Neurotoxicity risk if not adjusted.</p>
+                             <p className="text-red-700 font-bold text-xs bg-red-50 p-2 rounded border border-red-100 flex items-center gap-1">
+                                <AlertTriangle className="w-4 h-4"/> Neurotoxicity risk if not adjusted.
+                             </p>
                         </div>
                     </div>
 
@@ -308,18 +346,23 @@ const DENTAL_DATA: ProtocolSection[] = [
                         <h4 className="font-bold text-blue-800 text-base mb-2">MEROPENEM (Merrem)</h4>
                         <div className="text-sm text-slate-800 space-y-2">
                             <p><strong>Dose:</strong> 1g IV q8h.</p>
-                            <div className="bg-slate-50 p-2 rounded border border-slate-200">
-                                <strong className="block text-slate-900 text-xs mb-1">Renal Adjustment:</strong>
-                                <table className="w-full text-xs border-collapse border border-slate-200">
-                                    <thead className="bg-slate-100"><tr><th className="p-1 border border-slate-200 text-left">CrCl</th><th className="p-1 border border-slate-200 text-left">Dose</th></tr></thead>
-                                    <tbody>
-                                        <tr><td className="p-1 border border-slate-200">26-50</td><td className="p-1 border border-slate-200">1g q12h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">10-25</td><td className="p-1 border border-slate-200">500mg q12h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">&lt;10</td><td className="p-1 border border-slate-200">500mg q24h</td></tr>
+                            <div>
+                                <strong className="block text-purple-900 text-xs mb-1 font-bold">Renal Adjustment:</strong>
+                                <table className="w-full text-xs border-collapse border border-slate-300">
+                                    <thead className="bg-purple-100">
+                                        <tr>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">CrCl</th>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">26-50</td><td className="p-2 border border-slate-300 text-purple-800">1g q12h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">10-25</td><td className="p-2 border border-slate-300 text-purple-800">500mg q12h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">&lt;10</td><td className="p-2 border border-slate-300 text-purple-800">500mg q24h</td></tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div className="text-xs text-red-900 font-bold">
+                            <div className="text-xs text-red-900 font-bold bg-red-50 p-2 rounded border border-red-100">
                                  Interaction: Valproic Acid (Seizure Risk).
                             </div>
                         </div>
@@ -330,36 +373,46 @@ const DENTAL_DATA: ProtocolSection[] = [
                         <h4 className="font-bold text-blue-800 text-base mb-2">IMIPENEM/CILASTATIN (Primaxin)</h4>
                         <div className="text-sm text-slate-800 space-y-2">
                             <p><strong>Dose:</strong> 500mg IV q6h (Max 4g/day).</p>
-                            <div className="bg-slate-50 p-2 rounded border border-slate-200">
-                                <strong className="block text-slate-900 text-xs mb-1">Renal Adjustment:</strong>
-                                <table className="w-full text-xs border-collapse border border-slate-200">
-                                    <thead className="bg-slate-100"><tr><th className="p-1 border border-slate-200 text-left">CrCl</th><th className="p-1 border border-slate-200 text-left">Dose</th></tr></thead>
-                                    <tbody>
-                                        <tr><td className="p-1 border border-slate-200">41-70</td><td className="p-1 border border-slate-200">500mg q8h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">21-40</td><td className="p-1 border border-slate-200">250mg q6h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">6-20</td><td className="p-1 border border-slate-200">250mg q12h</td></tr>
+                            <div>
+                                <strong className="block text-purple-900 text-xs mb-1 font-bold">Renal Adjustment:</strong>
+                                <table className="w-full text-xs border-collapse border border-slate-300">
+                                    <thead className="bg-purple-100">
+                                        <tr>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">CrCl</th>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">41-70</td><td className="p-2 border border-slate-300 text-purple-800">500mg q8h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">21-40</td><td className="p-2 border border-slate-300 text-purple-800">250mg q6h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">6-20</td><td className="p-2 border border-slate-300 text-purple-800">250mg q12h</td></tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <p className="text-xs text-red-700 bg-red-50 p-1 rounded">⚠️ Higher Seizure Risk than Meropenem.</p>
+                            <p className="text-xs text-red-700 bg-red-50 p-2 rounded border border-red-100 font-bold">⚠️ Higher Seizure Risk than Meropenem.</p>
                         </div>
                      </div>
                 </div>
     
                 {/* 2. FLUOROQUINOLONES */}
                 <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">2. FLUOROQUINOLONES</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">2. FLUOROQUINOLONES</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                         <h4 className="font-bold text-blue-800 text-base mb-2">LEVOFLOXACIN (Levaquin)</h4>
                         <div className="text-sm text-slate-800 space-y-2">
                             <p><strong>Dose:</strong> 750mg q24h.</p>
-                            <div className="bg-slate-50 p-2 rounded border border-slate-200">
-                                <strong className="block text-slate-900 text-xs mb-1">Renal Adjustment:</strong>
-                                <table className="w-full text-xs border-collapse border border-slate-200">
-                                    <thead className="bg-slate-100"><tr><th className="p-1 border border-slate-200 text-left">CrCl</th><th className="p-1 border border-slate-200 text-left">Dose</th></tr></thead>
-                                    <tbody>
-                                        <tr><td className="p-1 border border-slate-200">20-49</td><td className="p-1 border border-slate-200">750mg q48h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">10-19</td><td className="p-1 border border-slate-200">750mg q48h (Initial) → 500mg q48h</td></tr>
+                            <div>
+                                <strong className="block text-purple-900 text-xs mb-1 font-bold">Renal Adjustment:</strong>
+                                <table className="w-full text-xs border-collapse border border-slate-300">
+                                    <thead className="bg-purple-100">
+                                        <tr>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">CrCl</th>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">20-49</td><td className="p-2 border border-slate-300 text-purple-800">750mg q48h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">10-19</td><td className="p-2 border border-slate-300 text-purple-800">750mg q48h (Initial) → 500mg q48h</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -372,17 +425,22 @@ const DENTAL_DATA: ProtocolSection[] = [
     
                  {/* 3. GLYCOPEPTIDES */}
                  <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">3. GLYCOPEPTIDES</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">3. GLYCOPEPTIDES</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                         <h4 className="font-bold text-blue-800 text-base mb-2">TEICOPLANIN (Targocid)</h4>
                         <div className="text-sm text-slate-800 space-y-2">
                              <p><strong>Dose:</strong> 400mg q24h (after loading).</p>
-                             <div className="bg-slate-50 p-2 rounded border border-slate-200 text-xs">
-                                <table className="w-full text-xs border-collapse border border-slate-200">
-                                    <thead className="bg-slate-100"><tr><th className="p-1 border border-slate-200 text-left">CrCl</th><th className="p-1 border border-slate-200 text-left">Dose</th></tr></thead>
-                                    <tbody>
-                                        <tr><td className="p-1 border border-slate-200">40-60</td><td className="p-1 border border-slate-200">q48h</td></tr>
-                                        <tr><td className="p-1 border border-slate-200">&lt;40</td><td className="p-1 border border-slate-200">q72h</td></tr>
+                             <div>
+                                <table className="w-full text-xs border-collapse border border-slate-300">
+                                    <thead className="bg-purple-100">
+                                        <tr>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">CrCl</th>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">40-60</td><td className="p-2 border border-slate-300 text-purple-800">q48h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">&lt;40</td><td className="p-2 border border-slate-300 text-purple-800">q72h</td></tr>
                                     </tbody>
                                 </table>
                              </div>
@@ -392,7 +450,7 @@ const DENTAL_DATA: ProtocolSection[] = [
     
                 {/* 4. OXAZOLIDINONES */}
                  <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">4. OXAZOLIDINONES</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">4. OXAZOLIDINONES</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                         <h4 className="font-bold text-blue-800 text-base mb-2">LINEZOLID (Zyvox)</h4>
                         <div className="text-sm text-slate-800 space-y-2">
@@ -406,22 +464,33 @@ const DENTAL_DATA: ProtocolSection[] = [
     
                 {/* 5. AMINOGLYCOSIDES */}
                  <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">5. AMINOGLYCOSIDES</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">5. AMINOGLYCOSIDES</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                         <h4 className="font-bold text-blue-800 text-base mb-2">AMIKACIN</h4>
                         <div className="text-sm text-slate-800 space-y-2">
                             <p><strong>Dose:</strong> 15 mg/kg q24h. Monitor Levels.</p>
-                            <div className="bg-slate-50 p-2 rounded border border-slate-200 text-xs">
-                                <strong>Renal:</strong> CrCl 21-50: 10mg/kg q24h. CrCl &lt;20: Dose by levels.
+                            <div>
+                                <table className="w-full text-xs border-collapse border border-slate-300">
+                                    <thead className="bg-purple-100">
+                                        <tr>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">CrCl</th>
+                                            <th className="p-2 border border-slate-300 text-left font-bold text-purple-900">Dose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">21-50</td><td className="p-2 border border-slate-300 text-purple-800">10mg/kg q24h</td></tr>
+                                        <tr><td className="p-2 border border-slate-300 font-medium text-purple-900">&lt;20</td><td className="p-2 border border-slate-300 text-purple-800">Dose by levels</td></tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <p className="font-bold text-red-700 text-xs">Nephrotoxic & Ototoxic.</p>
+                            <p className="font-bold text-red-700 text-xs mt-2">Nephrotoxic & Ototoxic.</p>
                         </div>
                      </div>
                 </div>
     
                  {/* 6. METRONIDAZOLE */}
                  <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">6. METRONIDAZOLE</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">6. METRONIDAZOLE</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                         <h4 className="font-bold text-blue-800 text-base mb-2">METRONIDAZOLE (Flagyl)</h4>
                         <div className="text-sm text-slate-800 space-y-2">
@@ -435,7 +504,7 @@ const DENTAL_DATA: ProtocolSection[] = [
 
                  {/* 8. ANTIFUNGALS */}
                  <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">7. ANTIFUNGALS</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">7. ANTIFUNGALS</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                         <h4 className="font-bold text-blue-800 text-base mb-2">FLUCONAZOLE</h4>
                         <div className="text-sm text-slate-800 space-y-2">
@@ -460,7 +529,7 @@ const DENTAL_DATA: ProtocolSection[] = [
 
                 {/* 1. WARFARIN */}
                 <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">1. WARFARIN (Coumadin)</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">1. WARFARIN (Coumadin)</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm mb-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-800">
                              <div>
@@ -478,7 +547,7 @@ const DENTAL_DATA: ProtocolSection[] = [
 
                 {/* 2. DOACs */}
                 <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">2. DIRECT ORAL ANTICOAGULANTS (DOACs)</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">2. DIRECT ORAL ANTICOAGULANTS (DOACs)</h3>
                      
                      {/* RIVAROXABAN */}
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm mb-4">
@@ -520,7 +589,7 @@ const DENTAL_DATA: ProtocolSection[] = [
             <div className="space-y-6">
                 {/* 1. PHENYTOIN */}
                 <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">1. PHENYTOIN (Dilantin)</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">1. PHENYTOIN (Dilantin)</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm mb-4">
                         <div className="text-sm text-slate-800 space-y-2">
                              <p><strong>Dental Side Effects:</strong> Gingival Hyperplasia (50%). Strict hygiene required.</p>
@@ -538,7 +607,7 @@ const DENTAL_DATA: ProtocolSection[] = [
 
                 {/* 2. CARBAMAZEPINE */}
                  <div>
-                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-200 pb-1">2. CARBAMAZEPINE (Tegretol)</h3>
+                     <h3 className="font-bold text-slate-900 text-lg mb-3 border-b border-slate-300 pb-1">2. CARBAMAZEPINE (Tegretol)</h3>
                      <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm mb-4">
                         <div className="text-sm text-slate-800 space-y-2">
                              <p><strong>Alerts:</strong> Hyponatremia (SIADH), Agranulocytosis.</p>
